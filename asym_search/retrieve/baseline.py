@@ -11,7 +11,7 @@ import torch.distributed as dist
 from transformers import PreTrainedModel, AutoModel
 from transformers.file_utils import ModelOutput
 
-from asym_args import ModelArguments, \
+from ..asym_args import ModelArguments, \
     PipelineTrainingArguments as TrainingArguments
     
 

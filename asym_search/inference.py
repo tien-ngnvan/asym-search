@@ -2,9 +2,8 @@ import torch
 from typing import Union, List
 from transformers import AutoTokenizer, AutoConfig
 
-from retrieve.modeling import RetrieveModel
-from rerank.modeling import RerankModel
-
+from .retrieve.modeling import RetrieveModel
+from .rerank.modeling import RerankModel
 import logging
 
 logger = logging.getLogger()
@@ -140,34 +139,3 @@ class RerankInference:
         score = model_output.scores.cpu().detach().numpy()[0]
         
         return score
-
-
-if __name__ == '__main__':      
-    
-    # test retrieval
-    retrieval = RetrieveInference(
-        model_name_or_path="caskcsg/cotmae_base_msmarco_retriever",
-        q_max_length=128,
-        p_max_length=384,
-        device_type='cpu'
-    )
-    text = ["I have to go there"] * 5
-    encode = retrieval.encode_context(text)
-    print(encode)
-    
-    # test rerank
-    rerank = RerankInference(
-        model_name_or_path="caskcsg/cotmae_base_msmarco_reranker",
-        q_max_length=128,
-        p_max_length=384,
-        device_type='cpu'
-    )
-    query = "If I hypothetically built a fully functioning rocket and were able to "\
-            "fund the trip myself, would it be legal for me to leave earth?"
-    passage = "crew, who have become the first humans to travel into space. The rocket is at first thought to be lost, " \
-            "having dramatically overshot its planned orbit, but eventually it is detected by radar and returns to Earth, " \
-            "crash-landing in Wimbledon, London.\nWhen Quatermass and his team reach the crash area and succeed in opening the rocket, " \
-            "they discover that only one of the three crewmen, Victor Carroon, remains inside. Quatermass and his chief assistant Paterson " \
-            "(Hugh Kelly) investigate the rocket's interior and are baffled by what they find: the space suits of the others are present, and the instruments on board"
-    score = rerank.encode_pair(query=query, passage=passage)[0]
-    print(score)

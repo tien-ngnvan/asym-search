@@ -7,7 +7,7 @@ from torch import nn, Tensor
 from transformers import AutoModelForSequenceClassification, PreTrainedModel
 from transformers.file_utils import ModelOutput
 
-from asym_args import ModelArguments, \
+from ..asym_args import ModelArguments, \
     PipelineTrainingArguments as TrainingArguments
 
 import logging
