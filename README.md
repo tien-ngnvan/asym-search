@@ -47,7 +47,7 @@ print(passage_embd)
     
 ### Reranker
 ```python
-from asym_search import RetrieveInference
+from asym_search import RerankInference
 
 sentence1 = "If I hypothetically built a fully functioning rocket and were able to "\
             "fund the trip myself, would it be legal for me to leave earth?"
