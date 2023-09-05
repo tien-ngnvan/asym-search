@@ -1,12 +1,12 @@
-# ASYM-SEARCH
-Asym-search is a search engine for research and development that uses a searching and ranking pipeline in Dense Passage Retrieval. 
+# SYMSEARCH
+symsearch is a search engine for research and development that uses a searching and ranking pipeline in Dense Passage Retrieval. 
 
 ## Installation
-Asym-search recommends Python 3.8 or higher version. 
+symsearch recommends Python 3.8 or higher version. 
 
 Install with ``pip``
 ```
-pip install asym-search
+pip install symsearch
 ```
 
 ## Training
@@ -16,7 +16,7 @@ pip install asym-search
 1. Query embedding
   
 ``` python
-from asym_search import RetrieveInference
+from symsearch import RetrieveInference
 
 sentence = "Why does water heated to room temperature feel colder than the air around it?"
 
@@ -30,7 +30,7 @@ print(query_embd)
 ```
 2. Passage embedding
 ``` python
-from asym_search import RetrieveInference
+from symsearch import RetrieveInference
 
 sentence = "Water transfers heat more efficiently than air. When something feels cold it's " \
           "because heat is being transferred from your skin to whatever you're touching. " \
@@ -47,7 +47,7 @@ print(passage_embd)
     
 ### Reranker
 ```python
-from asym_search import RerankInference
+from symsearch import RerankInference
 
 sentence1 = "If I hypothetically built a fully functioning rocket and were able to "\
             "fund the trip myself, would it be legal for me to leave earth?"
