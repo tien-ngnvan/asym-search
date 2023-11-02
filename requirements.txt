@@ -1,1 +1,5 @@
 transformers
+pypdf
+faiss-cpu
+langchain
+chromadb
