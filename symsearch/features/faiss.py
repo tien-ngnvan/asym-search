@@ -175,4 +175,4 @@ class CustomFAISS(FAISS):
                 for doc, similarity in docs
                 if cmp(similarity, score_threshold)
             ]
-        return [{id : doc[0].page_content} for id, doc in zip(ids[:k], docs[:k])]
+        return [{'id': id, 'doc':doc[0].page_content} for id, doc in zip(ids[:k], docs[:k])]

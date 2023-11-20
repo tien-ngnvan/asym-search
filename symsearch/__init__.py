@@ -8,6 +8,5 @@ from .asym_args import (
     PipelineTrainingArguments
 )
 from .inference import (
-    RerankInference,
     RetrieveInference
 )
