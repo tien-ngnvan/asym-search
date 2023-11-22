@@ -1,10 +1,12 @@
 # Build stage:
 FROM hieupth/mamba AS build
 
+RUN mamba create --name symsearch python=3.9 openpyxl flask pytorch cpuonly transformers pypdf faiss-cpu langchain chromadb -c conda-forge -c pytorch -y
+# ADD . . 
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
-RUN mamba create --name ocr python=3.9 openpyxl flask pytorch cpuonly transformers pypdf faiss-cpu langchain chromadb -c conda-forge -c pytorch -y
+
 RUN mamba install -c conda-forge conda-pack
-RUN conda-pack -n ocr -o /tmp/env.tar && \
+RUN conda-pack -n symsearch -o /tmp/env.tar && \
     mkdir /venv && cd /venv && tar xf /tmp/env.tar && \
     rm /tmp/env.tar
 
