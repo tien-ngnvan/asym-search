@@ -39,7 +39,7 @@ def query_result():
     
     
 if __name__ == "__main__":
-    df_doanhnghiep = load_csv_file('data\danh-muc-nganh-nghe-dang-ky-kinh-doanh.xlsx')
+    df_doanhnghiep = load_csv_file('data/danh-muc-nganh-nghe-dang-ky-kinh-doanh.xlsx')
     print("\nWaiting load database . . .\n")
     faiss = add_to_db(df_doanhnghiep)
     app.run()
