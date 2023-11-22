@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 ## Download checkpoint model
-Please download our checkpoint model and unzip [ckpt.zip](https://drive.google.com/file/d/1sTuuRz5dS1aB0K-nQhjrsjfUh9MMiPSz/view?usp=sharing) put as structure
+Please download our checkpoint model and unzip [ckpt.zip](https://drive.google.com/drive/folders/1XTStMhji92u5Zyy3W_uoOU5YEVNtHm8k?usp=drive_link) put as structure
 ```
 |__data
 |  |__danh-muc-nganh-nghe-dang-ky-kinh-doanh.xlsx
