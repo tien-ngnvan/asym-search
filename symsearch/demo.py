@@ -50,7 +50,7 @@ def add_to_db(df: pd.DataFrame):
 def query_result():
     req = request.json
     result = faiss.similarity_search_with_score(req["query"], int(req["knn"]))
-    print(result)
+
     return jsonify(result)
 
 
